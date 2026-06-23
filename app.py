@@ -198,7 +198,7 @@ const iconos = {
 
     "Comunitario":"👥",
 
-    "Infancia":"🎈",
+    "Infancia":"🧒",
 
     "Judicial":"⚖️",
 
@@ -216,9 +216,9 @@ const iconos = {
 
     "Seguridad":"🚨",
 
-    "Publico":"🏛️",
+    "Publico":"💼",
 
-    "Público":"🏛️",
+    "Público":"💼",
 
     "Privada":"🏢"
 
@@ -248,10 +248,10 @@ nodos.forEach(n => {
         html: iconos[n.tipo],
 
 
-        iconSize:[40,40],
+        iconSize:[30,30],
 
 
-        iconAnchor:[20,20]
+        iconAnchor:[15,15]
 
 
     });
