@@ -198,17 +198,17 @@ const iconos = {
 
     "Comunitario":"👥",
 
-    "Infancia":"🧒",
+    "Infancia":"🎈",
 
     "Judicial":"⚖️",
 
-    "Salud":"✚",
+    "Salud":"🏥",
 
     "Educacion":"📖",
 
-    "Programa":"🔴",
+    "Programa":"🤝",
 
-    "programa":"🔴",
+    "programa":"🤝",
 
     "Gobierno local":"🏛️",
 
