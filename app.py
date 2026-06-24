@@ -314,7 +314,7 @@ fetch("/mapa")
             weight: 1,
             fillColor: "#476b48",
             fillOpacity: 1
-        }
+        },
 
 onEachFeature: function(feature, layer) {
 
@@ -331,14 +331,15 @@ onEachFeature: function(feature, layer) {
                     {
                         permanent: true,
                         direction: "center",
-                        className: "comuna-label"
+                        className: "comuna-label",
 			opacity:1
                     }
                 );
+	}
 
-        }
+}
 
-    }).addTo(map);
+}).addTo(map);
 
     capaMapa.bringToBack();
 
