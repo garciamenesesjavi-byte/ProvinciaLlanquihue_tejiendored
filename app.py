@@ -78,12 +78,16 @@ body {
 
     font-family:Arial;
 
+    background:white;
+
 }
 
 
 #map {
 
     height:100vh;
+
+    background:white;
 
 }
 
@@ -136,7 +140,7 @@ button {
 
 }
 
-.comuna-label{
+.comuna-label {
 
     background:transparent !important;
 
@@ -144,15 +148,46 @@ button {
 
     box-shadow:none !important;
 
-    color:#222;
+    color:white;
+
+    font-size:13px;
 
     font-weight:bold;
 
+    text-shadow:
+        0 0 3px black,
+        0 0 6px black;
+
+}
+
+.legend {
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    box-shadow:0 0 5px rgba(0,0,0,.3);
+
+    line-height:18px;
+
     font-size:12px;
 
-    text-shadow:
-        1px 1px 2px white,
-       -1px -1px 2px white;
+}
+
+.legend span {
+
+    display:inline-block;
+
+    width:12px;
+
+    height:12px;
+
+    margin-right:6px;
+
+    border-radius:50%;
+
 }
 
 </style>
@@ -262,13 +297,51 @@ const nombresFicticios = {
 fetch("/mapa")
 
 .then(r => r.json())
+
 .then(data => {
 
-    console.log(data);
+    const capaMapa = L.geoJSON(data, {
 
-   const capaMapa = L.geoJSON(data).addTo(map);
+        style: {
 
-map.fitBounds(capaMapa.getBounds());
+            color:"#4f6f4f",
+
+            weight:0,
+
+            fillColor:"#4f6f4f",
+
+            fillOpacity:1
+
+        },
+
+        onEachFeature:function(feature, layer){
+
+            const nombreReal =
+                feature.properties.Comuna;
+
+            const nombreFicticio =
+                nombresFicticios[nombreReal]
+                || nombreReal;
+
+            layer.bindTooltip(
+
+                nombreFicticio,
+
+                {
+
+                    permanent:true,
+
+                    direction:"center",
+
+                    className:"comuna-label"
+
+                }
+
+            );
+
+        }
+
+    }).addTo(map);
 
     map.fitBounds(
         capaMapa.getBounds()
@@ -284,7 +357,7 @@ nodos.forEach(n => {
     L.circleMarker(
         [n.lat,n.lon],
         {
-            radius:7,
+            radius:4,
 
             fillColor:color,
 
@@ -307,6 +380,44 @@ nodos.forEach(n => {
         Tipo: ${n.tipo}
         `
     );
+const legend = L.control({position:'bottomright'});
+
+legend.onAdd = function () {
+
+    const div = L.DomUtil.create('div','info legend');
+
+    div.innerHTML = `
+
+    <h4>Organizaciones</h4>
+
+    <div><span style="background:#ff69b4"></span> Programa</div>
+
+    <div><span style="background:#4CAF50"></span> Salud</div>
+
+    <div><span style="background:#6ec6ff"></span> Judicial</div>
+
+    <div><span style="background:#ffd54f"></span> Educación</div>
+
+    <div><span style="background:#ff9800"></span> Comunitario</div>
+
+    <div><span style="background:#ff8a80"></span> Seguridad</div>
+
+    <div><span style="background:#7fffd4"></span> Gobierno local</div>
+
+    <div><span style="background:#c7a17a"></span> Infancia</div>
+
+    <div><span style="background:#c2185b"></span> Público</div>
+
+    <div><span style="background:#556b2f"></span> Privada</div>
+
+    <div><span style="background:#000000"></span> Servicio</div>
+
+    `;
+
+    return div;
+};
+
+legend.addTo(map);
 
 });
 
