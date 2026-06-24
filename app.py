@@ -148,15 +148,20 @@ button {
 
     box-shadow: none !important;
 
-    color: white;
+    color: white !important;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: bold;
 
+    text-align: center;
+
+    white-space: nowrap;
+
+
     text-shadow:
-        1px 1px 3px black,
-        -1px -1px 3px black;
+        2px 2px 4px rgba(0,0,0,0.9),
+        -1px -1px 3px rgba(0,0,0,0.9);
 
 }
 
@@ -309,6 +314,28 @@ fetch("/mapa")
             weight: 1,
             fillColor: "#476b48",
             fillOpacity: 1
+        }
+
+onEachFeature: function(feature, layer) {
+
+            const comuna =
+                feature.properties?.Comuna || "";
+
+            const nombre =
+                nombresFicticios[comuna] || comuna;
+
+            if(nombre){
+
+                layer.bindTooltip(
+                    nombre,
+                    {
+                        permanent: true,
+                        direction: "center",
+                        className: "comuna-label"
+			opacity:1
+                    }
+                );
+
         }
 
     }).addTo(map);
