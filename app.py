@@ -142,21 +142,21 @@ button {
 
 .comuna-label {
 
-    background:transparent !important;
+    background: transparent !important;
 
-    border:none !important;
+    border: none !important;
 
-    box-shadow:none !important;
+    box-shadow: none !important;
 
-    color:black;
+    color: white;
 
-    font-size:13px;
+    font-size: 12px;
 
-    font-weight:bold;
+    font-weight: bold;
 
     text-shadow:
-        0 0 3px black,
-        0 0 6px black;
+        1px 1px 3px black,
+        -1px -1px 3px black;
 
 }
 
@@ -302,24 +302,42 @@ fetch("/mapa")
 .then(r => r.json())
 .then(data => {
 
-    const capaMapa = L.geoJSON(data,{
+    const capaMapa = L.geoJSON(data, {
+
         style:{
-            color:"red",
-            weight:2,
-            fillColor:"green",
-            fillOpacity:0.8
+            color:"#d9e6d5",
+            weight:1,
+            fillColor:"#476b48",
+            fillOpacity:1
+        },
+
+        onEachFeature: function(feature, layer){
+
+            const comuna =
+                feature.properties.Comuna;
+
+            const nombre =
+                nombresFicticios[comuna] || comuna;
+
+            layer.bindTooltip(
+                nombre,
+                {
+                    permanent:true,
+                    direction:"center",
+                    className:"comuna-label"
+                }
+            );
+
         }
+
     }).addTo(map);
 
-    map.fitBounds(capaMapa.getBounds());
-
-})
-.catch(error => {
-
-    console.log("Error GeoJSON:", error);
+    map.fitBounds(
+        capaMapa.getBounds()
+        map.setZoom(8);
+    );
 
 });
-
 nodos.forEach(n => {
 
     let color =
@@ -328,13 +346,13 @@ nodos.forEach(n => {
     L.circleMarker(
         [n.lat,n.lon],
         {
-            radius:4,
+            radius:6,
 
             fillColor:color,
 
             color:"#ffffff",
 
-            weight:1,
+            weight:2,
 
             opacity:1,
 
