@@ -260,41 +260,17 @@ const nombresFicticios = {
 };
 
 fetch("/mapa")
+
 .then(r => r.json())
 .then(data => {
 
-    const capaMapa = L.geoJSON(data, {
+    console.log(data);
 
-        style: {
+    const capaMapa = L.geoJSON(data).addTo(map);
 
-            color:"#666",
-            weight:1,
+    map.fitBounds(capaMapa.getBounds());
 
-            fillColor:"#7a8f62",
-            fillOpacity:0.9
-
-        },
-
-        onEachFeature:function(feature, layer){
-
-            const nombreReal =
-                feature.properties.Comuna;
-
-            const nombreFicticio =
-                nombresFicticios[nombreReal]
-                || nombreReal;
-
-            layer.bindTooltip(
-                nombreFicticio,
-                {
-                    permanent:true,
-                    direction:"center",
-                    className:"comuna-label"
-                }
-            );
-
-        }
-
+});
     }).addTo(map);
 
     map.fitBounds(
