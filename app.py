@@ -316,10 +316,10 @@ fetch("/mapa")
             fillOpacity: 1
         },
 
-onEachFeature: function(feature, layer) {
+	onEachFeature: function(feature, layer) {
 
             const comuna =
-                feature.properties?.Comuna || "";
+   		feature.properties["Comuna"] || "";
 
             const nombre =
                 nombresFicticios[comuna] || comuna;
