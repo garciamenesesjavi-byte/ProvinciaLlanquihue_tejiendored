@@ -421,8 +421,6 @@ legend.onAdd = function () {
 
 legend.addTo(map);
 
-});
-
 let searchMarker = null;
 
 function buscar(){
