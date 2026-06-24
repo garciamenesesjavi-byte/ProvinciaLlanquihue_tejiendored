@@ -140,28 +140,23 @@ button {
 
 }
 
-.comuna-label {
+.comuna-label{
 
-    background: transparent !important;
+    background:transparent !important;
 
-    border: none !important;
+    border:none !important;
 
-    box-shadow: none !important;
+    box-shadow:none !important;
 
-    color: white !important;
+    color:white !important;
 
-    font-size: 14px;
+    font-size:15px;
 
-    font-weight: bold;
-
-    text-align: center;
-
-    white-space: nowrap;
-
+    font-weight:bold;
 
     text-shadow:
-        2px 2px 4px rgba(0,0,0,0.9),
-        -1px -1px 3px rgba(0,0,0,0.9);
+        1px 1px 4px black,
+        -1px -1px 4px black;
 
 }
 
@@ -304,52 +299,50 @@ const nombresFicticios = {
 };
 
 fetch("/mapa")
-.then(r => r.json())
-.then(data => {
+.then(response => response.json())
+.then(function(geojson){
 
-    const capaMapa = L.geoJSON(data, {
+    const mapa = L.geoJSON(geojson,{
 
-        style: {
-            color: "#d9e6d5",
-            weight: 1,
-            fillColor: "#476b48",
-            fillOpacity: 1
+        style:function(feature){
+
+            return{
+                fillColor:"#5f8f58",
+                fillOpacity:1,
+                color:"#2f5d31",
+                weight:2
+            };
+
         },
 
-	onEachFeature: function(feature, layer) {
+        onEachFeature:function(feature,layer){
 
-            const comuna =
-   		feature.properties["Comuna"] || "";
+            const real = feature.properties.Comuna;
 
-            const nombre =
-                nombresFicticios[comuna] || comuna;
+            const ficticio =
+                nombresFicticios[real] || real;
 
-            if(nombre){
+            layer.bindTooltip(ficticio,{
+                permanent:true,
+                direction:"center",
+                className:"comuna-label"
+            });
 
-                layer.bindTooltip(
-                    nombre,
-                    {
-                        permanent: true,
-                        direction: "center",
-                        className: "comuna-label",
-			opacity:1
-                    }
-                );
-	}
+        }
 
-}
+    });
 
-}).addTo(map);
+    mapa.addTo(map);
 
-    capaMapa.bringToBack();
+    mapa.bringToBack();
 
-    map.fitBounds(
-        capaMapa.getBounds()
-    );
+    map.fitBounds(mapa.getBounds());
 
 })
-.catch(error => {
-    console.log(error);
+.catch(function(err){
+
+    console.log(err);
+
 });
 
 nodos.forEach(n => {
