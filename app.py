@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request, jsonify
+from flask import Flask, render_template_string, request, jsonify, send_file
 import requests
 import csv
 import os
@@ -13,6 +13,11 @@ app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.path.join(BASE_DIR, "data", "nodes.csv")
+
+GEOJSON_PATH = os.path.join(
+    BASE_DIR,
+    "mapaficticio.geojson"
+)
 
 NODES = []
 
@@ -131,6 +136,24 @@ button {
 
 }
 
+.comuna-label{
+
+    background:transparent !important;
+
+    border:none !important;
+
+    box-shadow:none !important;
+
+    color:#222;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    text-shadow:
+        1px 1px 2px white,
+       -1px -1px 2px white;
+}
 
 </style>
 
@@ -167,225 +190,203 @@ button {
 <script>
 
 
-const map = L.map('map')
-
-.setView([-41.7,-72.5],7);
-
-
-
-
-
-L.tileLayer(
-
-'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-
-{
-
-    attribution:'OpenStreetMap'
-
-}
-
-).addTo(map);
-
-
-
-
-
-const iconos = {
-
-
-    "Servicio":"🏠",
-
-    "Comunitario":"👥",
-
-    "Infancia":"🧒",
-
-    "Judicial":"⚖️",
-
-    "Salud":"🏥",
-
-    "Educacion":"📖",
-
-    "Programa":"🤝",
-
-    "programa":"🤝",
-
-    "Gobierno local":"🏛️",
-
-    "Espacio":"🌊",
-
-    "Seguridad":"🚨",
-
-    "Publico":"💼",
-
-    "Público":"💼",
-
-    "Privada":"🏢"
-
-
-};
-
-
-
-
+const map = L.map('map');
 
 const nodos = {{nodes | safe}};
 
+const colores = {
 
+    "Programa":"#ff69b4",
+    "programa":"#ff69b4",
 
+    "Salud":"#4CAF50",
 
+    "Judicial":"#6ec6ff",
+    "judicial":"#6ec6ff",
 
-nodos.forEach(n => {
+    "Educacion":"#ffd54f",
 
+    "Comunitario":"#ff9800",
 
+    "Seguridad":"#ff8a80",
 
-    let icon = L.divIcon({
+    "Gobierno local":"#7fffd4",
 
+    "Infancia":"#c7a17a",
 
-        className:"org-icon",
+    "Publico":"#c2185b",
+    "Público":"#c2185b",
 
+    "Privada":"#556b2f",
 
-        html: iconos[n.tipo],
+    "Servicio":"#000000"
 
+};
 
-        iconSize:[30,30],
+const nombresFicticios = {
 
+    "Puerto Montt":"Puerto Verde",
+    "Puerto Varas":"Lago Claro",
+    "Frutillar":"Bosque Azul",
+    "Llanquihue":"Villa Horizonte",
+    "Los Muermos":"Campo Norte",
+    "Maullín":"Bahía Serena",
+    "Calbuco":"Isla Bruma",
+    "Cochamó":"Valle Neblina",
+    "Fresia":"Campos del Sur",
+    "Puerto Octay":"Río Cristal",
 
-        iconAnchor:[15,15]
+    "Osorno":"Valle Central",
+    "Purranque":"Río Dorado",
+    "Puyehue":"Monte Claro",
+    "Río Negro":"Bosque del Norte",
+    "San Pablo":"Campo Azul",
 
+    "Ancud":"Puerto Bruma",
+    "Castro":"Villa Estrella",
+    "Chonchi":"Lago del Sur",
+    "Curaco de Vélez":"Isla Serena",
+    "Dalcahue":"Puerto Niebla",
+    "Puqueldón":"Isla Horizonte",
+    "Queilén":"Bahía Clara",
+    "Quellón":"Puerto Austral",
+    "Quemchi":"Bosque Marino",
+    "Quinchao":"Isla del Sol",
 
-    });
+    "Hualaihué":"Costa Verde",
+    "Palena":"Valle Austral",
+    "Futaleufú":"Río Celeste",
+    "Chaitén":"Puerto del Viento"
+};
 
+fetch("/mapa")
+.then(r => r.json())
+.then(data => {
 
+    const capaMapa = L.geoJSON(data, {
 
+        style: {
 
+            color:"#666",
+            weight:1,
 
-    L.marker(
+            fillColor:"#7a8f62",
+            fillOpacity:0.9
 
-        [n.lat,n.lon],
+        },
 
-        {
+        onEachFeature:function(feature, layer){
 
-            icon:icon
+            const nombreReal =
+                feature.properties.Comuna;
+
+            const nombreFicticio =
+                nombresFicticios[nombreReal]
+                || nombreReal;
+
+            layer.bindTooltip(
+                nombreFicticio,
+                {
+                    permanent:true,
+                    direction:"center",
+                    className:"comuna-label"
+                }
+            );
 
         }
 
+    }).addTo(map);
+
+    map.fitBounds(
+        capaMapa.getBounds()
+    );
+
+});
+
+nodos.forEach(n => {
+
+    let color =
+        colores[n.tipo] || "#888888";
+
+    L.circleMarker(
+        [n.lat,n.lon],
+        {
+            radius:7,
+
+            fillColor:color,
+
+            color:"#ffffff",
+
+            weight:1,
+
+            opacity:1,
+
+            fillOpacity:0.95
+        }
     )
 
     .addTo(map)
 
-
     .bindPopup(
-
         `
-
         <b>${n.label}</b>
-
         <br>
-
         Tipo: ${n.tipo}
-
         `
-
     );
-
 
 });
 
-
-
-
-
-
-
-let searchMarker=null;
-
-
+let searchMarker = null;
 
 function buscar(){
 
-
-
-    let ciudad=document.getElementById("city").value;
-
-
+    let ciudad =
+        document.getElementById("city").value;
 
     fetch(
-
-        "/buscar?q="+encodeURIComponent(ciudad)
-
+        "/buscar?q=" +
+        encodeURIComponent(ciudad)
     )
 
+    .then(r => r.json())
 
-    .then(r=>r.json())
-
-
-    .then(data=>{
-
+    .then(data => {
 
         if(data.length===0){
 
             alert("No encontrado");
 
             return;
-
         }
-
-
 
         let lugar=data[0];
 
-
-
         let lat=parseFloat(lugar.lat);
-
         let lon=parseFloat(lugar.lon);
 
-
-
-        map.setView(
-
-            [lat,lon],
-
-            12
-
-        );
-
-
-
+        map.setView([lat,lon],12);
 
         if(searchMarker){
 
-            map.removeLayer(searchMarker);
-
+            map.removeLayer(
+                searchMarker
+            );
         }
 
-
-
-        searchMarker=L.marker(
-
-            [lat,lon]
-
-        )
+        searchMarker=L.marker([lat,lon])
 
         .addTo(map)
 
-
         .bindPopup(
-
             lugar.display_name
-
         )
 
         .openPopup();
 
-
-
     });
 
-
 }
-
 
 
 </script>
@@ -476,7 +477,13 @@ def buscar():
     return jsonify(response.json())
 
 
+@app.route("/mapa")
+def mapa():
 
+    return send_file(
+        GEOJSON_PATH,
+        mimetype="application/json"
+    )
 
 
 if __name__=="__main__":
