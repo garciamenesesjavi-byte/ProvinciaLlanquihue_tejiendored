@@ -304,58 +304,39 @@ fetch("/mapa")
 
     const capaMapa = L.geoJSON(data, {
 
-        style:{
-            color:"#d9e6d5",
-            weight:1,
-            fillColor:"#476b48",
-            fillOpacity:1
-        },
-
-        onEachFeature: function(feature, layer){
-
-            const comuna =
-                feature.properties.Comuna;
-
-            const nombre =
-                nombresFicticios[comuna] || comuna;
-
-            layer.bindTooltip(
-                nombre,
-                {
-                    permanent:true,
-                    direction:"center",
-                    className:"comuna-label"
-                }
-            );
-
+        style: {
+            color: "#d9e6d5",
+            weight: 1,
+            fillColor: "#476b48",
+            fillOpacity: 1
         }
 
     }).addTo(map);
 
+    capaMapa.bringToBack();
+
     map.fitBounds(
         capaMapa.getBounds()
-        map.setZoom(8);
     );
 
+})
+.catch(error => {
+    console.log(error);
 });
+
 nodos.forEach(n => {
 
     let color =
         colores[n.tipo] || "#888888";
 
-    L.circleMarker(
+    const marcador = L.circleMarker(
         [n.lat,n.lon],
         {
             radius:6,
-
             fillColor:color,
-
             color:"#ffffff",
-
             weight:2,
-
             opacity:1,
-
             fillOpacity:0.95
         }
     )
@@ -369,8 +350,10 @@ nodos.forEach(n => {
         Tipo: ${n.tipo}
         `
     );
-});
 
+    marcador.bringToFront();
+
+});
 const legend = L.control({position:'bottomright'});
 
 legend.onAdd = function () {
