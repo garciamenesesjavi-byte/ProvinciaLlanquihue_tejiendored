@@ -266,12 +266,9 @@ fetch("/mapa")
 
     console.log(data);
 
-    const capaMapa = L.geoJSON(data).addTo(map);
+   const capaMapa = L.geoJSON(data).addTo(map);
 
-    map.fitBounds(capaMapa.getBounds());
-
-});
-    }).addTo(map);
+map.fitBounds(capaMapa.getBounds());
 
     map.fitBounds(
         capaMapa.getBounds()
