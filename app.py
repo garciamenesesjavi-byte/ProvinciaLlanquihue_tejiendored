@@ -304,9 +304,9 @@ fetch("/mapa")
 
         style: {
 
-            color:"#4f6f4f",
+            color:"#355335",
 
-            weight:0,
+            weight:1,
 
             fillColor:"#4f6f4f",
 
@@ -380,6 +380,8 @@ nodos.forEach(n => {
         Tipo: ${n.tipo}
         `
     );
+});
+
 const legend = L.control({position:'bottomright'});
 
 legend.onAdd = function () {
