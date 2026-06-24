@@ -225,7 +225,8 @@ button {
 <script>
 
 
-const map = L.map('map');
+const map = L.map('map')
+.setView([-41.7,-72.5],7);
 
 const nodos = {{nodes | safe}};
 
@@ -254,13 +255,16 @@ const colores = {
 
     "Privada":"#556b2f",
 
+    "Espacio":"#7e8c54",
+
     "Servicio":"#000000"
+
 
 };
 
 const nombresFicticios = {
 
-    "Puerto Montt":"Puerto Verde",
+    "Puerto Montt":"Fuerte Norte",
     "Puerto Varas":"Lago Claro",
     "Frutillar":"Bosque Azul",
     "Llanquihue":"Villa Horizonte",
@@ -268,7 +272,7 @@ const nombresFicticios = {
     "Maullín":"Bahía Serena",
     "Calbuco":"Isla Bruma",
     "Cochamó":"Valle Neblina",
-    "Fresia":"Campos del Sur",
+    "Fresia":"Valle Hermoso",
     "Puerto Octay":"Río Cristal",
 
     "Osorno":"Valle Central",
@@ -277,14 +281,14 @@ const nombresFicticios = {
     "Río Negro":"Bosque del Norte",
     "San Pablo":"Campo Azul",
 
-    "Ancud":"Puerto Bruma",
+    "Ancud":"Punta de lanza",
     "Castro":"Villa Estrella",
-    "Chonchi":"Lago del Sur",
+    "Chonchi":"Lago de estrellas",
     "Curaco de Vélez":"Isla Serena",
     "Dalcahue":"Puerto Niebla",
     "Puqueldón":"Isla Horizonte",
     "Queilén":"Bahía Clara",
-    "Quellón":"Puerto Austral",
+    "Quellón":"Puerto Extremo",
     "Quemchi":"Bosque Marino",
     "Quinchao":"Isla del Sol",
 
@@ -298,53 +302,16 @@ fetch("/mapa")
 .then(r => r.json())
 .then(data => {
 
-    const capaMapa = L.geoJSON(data, {
-
-        style: {
-            color:"#355335",
-            weight:1,
-            fillColor:"#4f6f4f",
-            fillOpacity:1
-        },
-
-        onEachFeature: function(feature, layer) {
-
-            let nombreReal = "";
-
-            if(feature.properties){
-
-                nombreReal =
-                    feature.properties.Comuna ||
-                    feature.properties.COMUNA ||
-                    feature.properties.nombre ||
-                    feature.properties.NAME ||
-                    "";
-            }
-
-            const nombreFicticio =
-                nombresFicticios[nombreReal]
-                || nombreReal;
-
-            if(nombreFicticio){
-
-                layer.bindTooltip(
-                    nombreFicticio,
-                    {
-                        permanent:true,
-                        direction:"center",
-                        className:"comuna-label"
-                    }
-                );
-
-            }
-
+    const capaMapa = L.geoJSON(data,{
+        style:{
+            color:"red",
+            weight:2,
+            fillColor:"green",
+            fillOpacity:0.8
         }
-
     }).addTo(map);
 
-    map.fitBounds(
-        capaMapa.getBounds()
-    );
+    map.fitBounds(capaMapa.getBounds());
 
 })
 .catch(error => {
@@ -352,6 +319,7 @@ fetch("/mapa")
     console.log("Error GeoJSON:", error);
 
 });
+
 nodos.forEach(n => {
 
     let color =
