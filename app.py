@@ -148,7 +148,7 @@ button {
 
     box-shadow:none !important;
 
-    color:white;
+    color:black;
 
     font-size:13px;
 
@@ -295,49 +295,48 @@ const nombresFicticios = {
 };
 
 fetch("/mapa")
-
 .then(r => r.json())
-
 .then(data => {
 
     const capaMapa = L.geoJSON(data, {
 
         style: {
-
             color:"#355335",
-
             weight:1,
-
             fillColor:"#4f6f4f",
-
             fillOpacity:1
-
         },
 
-        onEachFeature:function(feature, layer){
+        onEachFeature: function(feature, layer) {
 
-            const nombreReal =
-                feature.properties.Comuna;
+            let nombreReal = "";
+
+            if(feature.properties){
+
+                nombreReal =
+                    feature.properties.Comuna ||
+                    feature.properties.COMUNA ||
+                    feature.properties.nombre ||
+                    feature.properties.NAME ||
+                    "";
+            }
 
             const nombreFicticio =
                 nombresFicticios[nombreReal]
                 || nombreReal;
 
-            layer.bindTooltip(
+            if(nombreFicticio){
 
-                nombreFicticio,
+                layer.bindTooltip(
+                    nombreFicticio,
+                    {
+                        permanent:true,
+                        direction:"center",
+                        className:"comuna-label"
+                    }
+                );
 
-                {
-
-                    permanent:true,
-
-                    direction:"center",
-
-                    className:"comuna-label"
-
-                }
-
-            );
+            }
 
         }
 
@@ -347,8 +346,12 @@ fetch("/mapa")
         capaMapa.getBounds()
     );
 
-});
+})
+.catch(error => {
 
+    console.log("Error GeoJSON:", error);
+
+});
 nodos.forEach(n => {
 
     let color =
