@@ -344,6 +344,15 @@ geojson.features.forEach(function(feature){
 
 });
 
+mapa.addTo(map);
+mapa.bringToBack();
+map.fitBounds(mapa.getBounds());
+
+})
+.catch(function(err){
+    console.log(err);
+});
+
 nodos.forEach(n => {
 
     let color =
