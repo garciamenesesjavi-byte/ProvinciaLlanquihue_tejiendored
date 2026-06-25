@@ -302,46 +302,45 @@ fetch("/mapa")
 .then(response => response.json())
 .then(function(geojson){
 
-    const mapa = L.geoJSON(geojson,{
+const mapa = L.geoJSON(null,{
 
-        style:function(feature){
+    style:function(feature){
 
-            return{
-                fillColor:"#5f8f58",
-                fillOpacity:1,
-                color:"#2f5d31",
-                weight:2
-            };
+        return{
+            fillColor:"#5f8f58",
+            fillOpacity:1,
+            color:"#2f5d31",
+            weight:2
+        };
 
-        },
+    },
 
-        onEachFeature:function(feature,layer){
+    onEachFeature:function(feature,layer){
 
-            const real = feature.properties.Comuna;
+        const real = feature.properties.Comuna;
 
-            const ficticio =
-                nombresFicticios[real] || real;
+        const ficticio =
+            nombresFicticios[real] || real;
 
-            layer.bindTooltip(ficticio,{
-                permanent:true,
-                direction:"center",
-                className:"comuna-label"
-            });
+        layer.bindTooltip(ficticio,{
+            permanent:true,
+            direction:"center",
+            className:"comuna-label"
+        });
 
-        }
+    }
 
-    });
+});
 
-    mapa.addTo(map);
+geojson.features.forEach(function(feature){
 
-    mapa.bringToBack();
-
-    map.fitBounds(mapa.getBounds());
-
-})
-.catch(function(err){
-
-    console.log(err);
+    if(
+        feature.geometry &&
+        feature.geometry.coordinates &&
+        feature.geometry.coordinates.length > 0
+    ){
+        mapa.addData(feature);
+    }
 
 });
 
@@ -557,11 +556,13 @@ def buscar():
 @app.route("/mapa")
 def mapa():
 
+    print(GEOJSON_PATH)
+    print(os.path.exists(GEOJSON_PATH))
+
     return send_file(
         GEOJSON_PATH,
         mimetype="application/json"
     )
-
 
 if __name__=="__main__":
 
