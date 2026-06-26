@@ -253,7 +253,7 @@ const colores = {
     "Publico":"#9922bf",
     "Público":"#9922bf",
 
-    "Privada":"#d82e48",
+    "Privada":"#B22222",
 
     "Espacio":"#858327",
 
