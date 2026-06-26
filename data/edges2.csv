@@ -1,212 +1,212 @@
-﻿Source,Target,Type,Weight,Name
-154,20,undirected,5,Cercana
-154,11,undirected,5,Cercana
-154,114,undirected,5,Cercana
-154,29,undirected,5,Cercana
-154,30,undirected,5,Cercana
-154,31,undirected,5,Cercana
-154,32,undirected,5,Cercana
-154,52,undirected,5,Cercana
-154,136,undirected,5,Cercana
-154,21,undirected,6,Colaboracion 
-21,27,undirected,5,Cercana
-21,5,undirected,6,Colaboracion 
-21,26,undirected,6,Colaboracion 
-21,154,undirected,6,Colaboracion 
-21,12,undirected,5,Cercana
-26,44,undirected,5,Cercana
-26,43,undirected,5,Cercana
-26,39,undirected,4,Subyugacion
-26,38,undirected,4,Subyugacion
-26,27,undirected,6,Colaboracion 
-26,37,undirected,5,Cercana
-26,46,undirected,5,Cercana
-26,47,undirected,5,Cercana
-26,20,undirected,4,Subyugacion
-26,11,undirected,4,Subyugacion
-26,114,undirected,4,Subyugacion
-26,29,undirected,4,Subyugacion
-26,2,undirected,5,Cercana
-26,3,undirected,5,Cercana
-21,27,undirected,6,Colaboracion 
-21,154,undirected,6,Colaboracion 
-21,9,undirected,4,Subyugacion
-21,1,undirected,4,Subyugacion
-21,70,undirected,5,Cercana
-21,8,undirected,6,Colaboracion 
-21,11,undirected,6,Colaboracion 
-21,56,undirected,2,Distante
-21,55,undirected,2,Distante
-21,110,undirected,2,Distante
-21,53,undirected,2,Distante
-21,54,undirected,5,Cercana
-21,108,undirected,2,Distante
-21,52,undirected,2,Distante
-21,51,undirected,6,Colaboracion 
-21,50,undirected,6,Colaboracion 
-21,49,undirected,6,Colaboracion 
-21,113,undirected,6,Colaboracion 
-21,61,undirected,6,Colaboracion 
-21,64,undirected,2,Distante
-21,63,undirected,2,Distante
-21,133,undirected,5,Cercana
-21,38,undirected,8,Cercana_Subyugacion 
-21,39,undirected,6,Colaboracion 
-21,44,undirected,6,Colaboracion 
-21,62,undirected,2,Distante
-21,66,undirected,2,Distante
-21,67,undirected,6,Colaboracion 
-21,47,undirected,6,Colaboracion 
-153,27,undirected,6,Colaboracion 
-153,154,undirected,6,Colaboracion 
-153,9,undirected,4,Subyugacion
-153,1,undirected,4,Subyugacion
-153,70,undirected,5,Cercana
-153,8,undirected,6,Colaboracion 
-153,11,undirected,6,Colaboracion 
-153,56,undirected,2,Distante
-153,55,undirected,2,Distante
-153,110,undirected,2,Distante
-153,53,undirected,2,Distante
-153,54,undirected,5,Cercana
-153,108,undirected,2,Distante
-153,52,undirected,2,Distante
-153,51,undirected,6,Colaboracion 
-153,50,undirected,6,Colaboracion 
-153,49,undirected,6,Colaboracion 
-153,113,undirected,6,Colaboracion 
-153,61,undirected,6,Colaboracion 
-153,64,undirected,2,Distante
-153,63,undirected,2,Distante
-153,133,undirected,5,Cercana
-153,38,undirected,8,Cercana_Subyugacion 
-153,39,undirected,6,Colaboracion 
-153,44,undirected,6,Colaboracion 
-153,62,undirected,2,Distante
-153,66,undirected,2,Distante
-153,67,undirected,6,Colaboracion 
-153,47,undirected,6,Colaboracion 
-22,27,undirected,6,Colaboracion 
-22,154,undirected,6,Colaboracion 
-22,9,undirected,4,Subyugacion
-22,1,undirected,4,Subyugacion
-22,70,undirected,5,Cercana
-22,8,undirected,6,Colaboracion 
-22,11,undirected,6,Colaboracion 
-22,56,undirected,2,Distante
-22,55,undirected,2,Distante
-22,110,undirected,2,Distante
-22,53,undirected,2,Distante
-22,54,undirected,5,Cercana
-22,108,undirected,2,Distante
-22,52,undirected,2,Distante
-22,51,undirected,6,Colaboracion 
-22,50,undirected,6,Colaboracion 
-22,49,undirected,6,Colaboracion 
-22,113,undirected,6,Colaboracion 
-22,61,undirected,6,Colaboracion 
-22,64,undirected,2,Distante
-22,63,undirected,2,Distante
-22,133,undirected,5,Cercana
-22,38,undirected,8,Cercana_Subyugacion 
-22,39,undirected,6,Colaboracion 
-22,44,undirected,6,Colaboracion 
-22,62,undirected,2,Distante
-22,66,undirected,2,Distante
-22,67,undirected,6,Colaboracion 
-22,47,undirected,6,Colaboracion 
-72,1,undirected,4,Subyugacion
-72,27,undirected,2,Distante
-72,23,undirected,9,Ambivalente
-72,24,undirected,9,Ambivalente
-72,9,undirected,2,Distante
-72,11,undirected,9,Ambivalente
-73,1,undirected,4,Subyugacion
-73,27,undirected,2,Distante
-73,23,undirected,9,Ambivalente
-73,24,undirected,9,Ambivalente
-73,9,undirected,2,Distante
-73,11,undirected,9,Ambivalente
-78,47,undirected,6,Colaboracion 
-78,46,undirected,2,Distante
-78,23,undirected,2,Distante
-78,155,undirected,6,Colaboracion 
-21,27,undirected,6,Colaboracion 
-21,58,undirected,2,Distante
-21,8,undirected,5,Cercana
-21,9,undirected,4,Subyugacion
-21,79,undirected,6,Colaboracion 
-146,38,undirected,6,Colaboracion 
-146,39,undirected,6,Colaboracion 
-83,44,undirected,6,Colaboracion 
-83,63,undirected,6,Colaboracion 
-83,139,undirected,6,Colaboracion 
-83,140,undirected,6,Colaboracion 
-83,141,undirected,6,Colaboracion 
-83,142,undirected,6,Colaboracion 
-83,143,undirected,6,Colaboracion 
-69,29,undirected,2,Distante
-69,32,undirected,2,Distante
-69,30,undirected,6,Colaboracion 
-22,29,undirected,2,Distante
-22,32,undirected,2,Distante
-22,30,undirected,6,Colaboracion 
-68,75,undirected,6,Colaboracion 
-68,38,undirected,2,Distante
-68,57,undirected,6,Colaboracion 
-75,38,undirected,6,Colaboracion 
-75,85,undirected,6,Colaboracion 
-75,117,undirected,6,Colaboracion 
-75,42,undirected,6,Colaboracion 
-75,149,undirected,6,Colaboracion 
-75,139,undirected,6,Colaboracion 
-75,140,undirected,6,Colaboracion 
-75,141,undirected,6,Colaboracion 
-75,142,undirected,6,Colaboracion 
-75,143,undirected,6,Colaboracion 
-75,115,undirected,6,Colaboracion 
-83,116,undirected,2,Distante
-83,95,undirected,2,Distante
-83,102,undirected,6,Colaboracion 
-83,98,undirected,6,Colaboracion 
-1,84,undirected,2,Distante
-1,85,undirected,2,Distante
-1,53,undirected,6,Colaboracion 
-1,55,undirected,6,Colaboracion 
-1,8,undirected,2,Distante
-1,87,undirected,2,Distante
-1,27,undirected,3,Conflictiva
-1,86,undirected,5,Cercana
-74,124,undirected,5,Cercana
-74,125,undirected,5,Cercana
-74,144,undirected,4,Subyugacion
-74,1,undirected,4,Subyugacion
-74,9,undirected,4,Subyugacion
-68,23,undirected,4,Subyugacion
-68,38,undirected,5,Cercana
-134,38,undirected,5,Cercana
-134,1,undirected,4,Subyugacion
-134,62,undirected,2,Distante
-78,47,undirected,6,Colaboracion 
-78,76,undirected,6,Colaboracion 
-78,38,undirected,4,Subyugacion
-78,130,undirected,5,Cercana
-122,1,undirected,4,Subyugacion
-122,7,undirected,4,Subyugacion
-122,9,undirected,3,Conflictiva
-122,119,undirected,2,Distante
-122,24,undirected,10,Conflictiva_distante
-122,57,undirected,11,Cercana_Conflictiva
-122,6,undirected,6,Colaboracion 
-123,136,undirected,2,Distante
-123,137,undirected,4,Subyugacion
-123,138,undirected,6,Colaboracion 
-123,6,undirected,6,Subyugacion
-83,44,undirected,2,Distante
-83,63,undirected,2,Distante
-83,150,undirected,2,Distante
-83,38,undirected,5,Cercana
-83,39,undirected,2,Distante
-72,9,undirected,7,Cuidado
-73,9,undirected,7,Cuidado
-122,9,undirected,7,Cuidado
+﻿Source,Target,Type,Weight,Name,,,,
+154,20,undirected,5,Cercana,,,,
+154,11,undirected,5,Cercana,,,,
+154,114,undirected,5,Cercana,,,,
+154,29,undirected,5,Cercana,,,,
+154,30,undirected,5,Cercana,,,,
+154,31,undirected,5,Cercana,,,,
+154,32,undirected,5,Cercana,,,,
+154,52,undirected,5,Cercana,,,,
+154,136,undirected,5,Cercana,,,,
+154,21,undirected,6,Colaboracion ,,,,
+21,27,undirected,5,Cercana,,,,
+21,5,undirected,6,Colaboracion ,,,,
+21,26,undirected,6,Colaboracion ,,,,
+21,154,undirected,6,Colaboracion ,,,,
+21,12,undirected,5,Cercana,,,,
+26,44,undirected,5,Cercana,,,,
+26,43,undirected,5,Cercana,,,,
+26,39,undirected,4,Subyugacion,,,,
+26,38,undirected,4,Subyugacion,,,,
+26,27,undirected,6,Colaboracion ,,,,
+26,37,undirected,5,Cercana,,,,
+26,46,undirected,5,Cercana,,,,
+26,47,undirected,5,Cercana,,,,
+26,20,undirected,4,Subyugacion,,,,
+26,11,undirected,4,Subyugacion,,,,
+26,114,undirected,4,Subyugacion,,,,
+26,29,undirected,4,Subyugacion,,,,
+26,2,undirected,5,Cercana,,,,
+26,3,undirected,5,Cercana,,,,
+21,27,undirected,6,Colaboracion ,,,,
+21,154,undirected,6,Colaboracion ,,,,
+21,9,undirected,4,Subyugacion,,,,
+21,1,undirected,4,Subyugacion,,,,
+21,70,undirected,5,Cercana,,,,
+21,8,undirected,6,Colaboracion ,,,,
+21,11,undirected,6,Colaboracion ,,,,
+21,56,undirected,2,Distante,,,,
+21,55,undirected,2,Distante,,,,
+21,110,undirected,2,Distante,,,,
+21,53,undirected,2,Distante,,,,
+21,54,undirected,5,Cercana,,,,
+21,108,undirected,2,Distante,,,,
+21,52,undirected,2,Distante,,,,
+21,51,undirected,6,Colaboracion ,,,,
+21,50,undirected,6,Colaboracion ,,,,
+21,49,undirected,6,Colaboracion ,,,,
+21,113,undirected,6,Colaboracion ,,,,
+21,61,undirected,6,Colaboracion ,,,,
+21,64,undirected,2,Distante,,,,
+21,63,undirected,2,Distante,,,,
+21,133,undirected,5,Cercana,,,,
+21,38,undirected,8,Cercana_Subyugacion ,,,,
+21,39,undirected,6,Colaboracion ,,,,
+21,44,undirected,6,Colaboracion ,,,,
+21,62,undirected,2,Distante,,,,
+21,66,undirected,2,Distante,,,,
+21,67,undirected,6,Colaboracion ,,,,
+21,47,undirected,6,Colaboracion ,,,,
+153,27,undirected,6,Colaboracion ,,,,
+153,154,undirected,6,Colaboracion ,,,,
+153,9,undirected,4,Subyugacion,,,,
+153,1,undirected,4,Subyugacion,,,,
+153,70,undirected,5,Cercana,,,,
+153,8,undirected,6,Colaboracion ,,,,
+153,11,undirected,6,Colaboracion ,,,,
+153,56,undirected,2,Distante,,,,
+153,55,undirected,2,Distante,,,,
+153,110,undirected,2,Distante,,,,
+153,53,undirected,2,Distante,,,,
+153,54,undirected,5,Cercana,,,,
+153,108,undirected,2,Distante,,,,
+153,52,undirected,2,Distante,,,,
+153,51,undirected,6,Colaboracion ,,,,
+153,50,undirected,6,Colaboracion ,,,,
+153,49,undirected,6,Colaboracion ,,,,
+153,113,undirected,6,Colaboracion ,,,,
+153,61,undirected,6,Colaboracion ,,,,
+153,64,undirected,2,Distante,,,,
+153,63,undirected,2,Distante,,,,
+153,133,undirected,5,Cercana,,,,
+153,38,undirected,8,Cercana_Subyugacion ,,,,
+153,39,undirected,6,Colaboracion ,,,,
+153,44,undirected,6,Colaboracion ,,,,
+153,62,undirected,2,Distante,,,,
+153,66,undirected,2,Distante,,,,
+153,67,undirected,6,Colaboracion ,,,,
+153,47,undirected,6,Colaboracion ,,,,
+22,27,undirected,6,Colaboracion ,,,,
+22,154,undirected,6,Colaboracion ,,,,
+22,9,undirected,4,Subyugacion,,,,
+22,1,undirected,4,Subyugacion,,,,
+22,70,undirected,5,Cercana,,,,
+22,8,undirected,6,Colaboracion ,,,,
+22,11,undirected,6,Colaboracion ,,,,
+22,56,undirected,2,Distante,,,,
+22,55,undirected,2,Distante,,,,
+22,110,undirected,2,Distante,,,,
+22,53,undirected,2,Distante,,,,
+22,54,undirected,5,Cercana,,,,
+22,108,undirected,2,Distante,,,,
+22,52,undirected,2,Distante,,,,
+22,51,undirected,6,Colaboracion ,,,,
+22,50,undirected,6,Colaboracion ,,,,
+22,49,undirected,6,Colaboracion ,,,,
+22,113,undirected,6,Colaboracion ,,,,
+22,61,undirected,6,Colaboracion ,,,,
+22,64,undirected,2,Distante,,,,
+22,63,undirected,2,Distante,,,,
+22,133,undirected,5,Cercana,,,,
+22,38,undirected,8,Cercana_Subyugacion ,,,,
+22,39,undirected,6,Colaboracion ,,,,
+22,44,undirected,6,Colaboracion ,,,,
+22,62,undirected,2,Distante,,,,
+22,66,undirected,2,Distante,,,,
+22,67,undirected,6,Colaboracion ,,,,
+22,47,undirected,6,Colaboracion ,,,,
+72,1,undirected,4,Subyugacion,,,,
+72,27,undirected,2,Distante,,,,
+72,23,undirected,9,Ambivalente,,,,
+72,24,undirected,9,Ambivalente,,,,
+72,9,undirected,2,Distante,,,,
+72,11,undirected,9,Ambivalente,,,,
+73,1,undirected,4,Subyugacion,,,,
+73,27,undirected,2,Distante,,,,
+73,23,undirected,9,Ambivalente,,,,
+73,24,undirected,9,Ambivalente,,,,
+73,9,undirected,2,Distante,,,,
+73,11,undirected,9,Ambivalente,,,,
+78,47,undirected,6,Colaboracion ,,,,
+78,46,undirected,2,Distante,,,,
+78,23,undirected,2,Distante,,,,
+78,155,undirected,6,Colaboracion ,,,,
+21,27,undirected,6,Colaboracion ,,,,
+21,58,undirected,2,Distante,,,,
+21,8,undirected,5,Cercana,,,,
+21,9,undirected,4,Subyugacion,,,,
+21,79,undirected,6,Colaboracion ,,,,
+146,38,undirected,6,Colaboracion ,,,,
+146,39,undirected,6,Colaboracion ,,,,
+83,44,undirected,6,Colaboracion ,,,,
+83,63,undirected,6,Colaboracion ,,,,
+83,139,undirected,6,Colaboracion ,,,,
+83,140,undirected,6,Colaboracion ,,,,
+83,141,undirected,6,Colaboracion ,,,,
+83,142,undirected,6,Colaboracion ,,,,
+83,143,undirected,6,Colaboracion ,,,,
+69,29,undirected,2,Distante,,,,
+69,32,undirected,2,Distante,,,,
+69,30,undirected,6,Colaboracion ,,,,
+22,29,undirected,2,Distante,,,,
+22,32,undirected,2,Distante,,,,
+22,30,undirected,6,Colaboracion ,,,,
+68,75,undirected,6,Colaboracion ,,,,
+68,38,undirected,2,Distante,,,,
+68,57,undirected,6,Colaboracion ,,,,
+75,38,undirected,6,Colaboracion ,,,,
+75,85,undirected,6,Colaboracion ,,,,
+75,117,undirected,6,Colaboracion ,,,,
+75,42,undirected,6,Colaboracion ,,,,
+75,149,undirected,6,Colaboracion ,,,,
+75,139,undirected,6,Colaboracion ,,,,
+75,140,undirected,6,Colaboracion ,,,,
+75,141,undirected,6,Colaboracion ,,,,
+75,142,undirected,6,Colaboracion ,,,,
+75,143,undirected,6,Colaboracion ,,,,
+75,115,undirected,6,Colaboracion ,,,,
+83,116,undirected,2,Distante,,,,
+83,95,undirected,2,Distante,,,,
+83,102,undirected,6,Colaboracion ,,,,
+83,98,undirected,6,Colaboracion ,,,,
+1,84,undirected,2,Distante,,,,
+1,85,undirected,2,Distante,,,,
+1,53,undirected,6,Colaboracion ,,,,
+1,55,undirected,6,Colaboracion ,,,,
+1,8,undirected,2,Distante,,,,
+1,87,undirected,2,Distante,,,,
+1,27,undirected,3,Conflictiva,,,,
+1,86,undirected,5,Cercana,,,,
+74,124,undirected,5,Cercana,,,,
+74,125,undirected,5,Cercana,,,,
+74,144,undirected,4,Subyugacion,,,,
+74,1,undirected,4,Subyugacion,,,,
+74,9,undirected,4,Subyugacion,,,,
+68,23,undirected,4,Subyugacion,,,,
+68,38,undirected,5,Cercana,,,,
+134,38,undirected,5,Cercana,,,,
+134,1,undirected,4,Subyugacion,,,,
+134,62,undirected,2,Distante,,,,
+78,47,undirected,6,Colaboracion ,,,,
+78,76,undirected,6,Colaboracion ,,,,
+78,38,undirected,4,Subyugacion,,,,
+78,130,undirected,5,Cercana,,,,
+122,1,undirected,4,Subyugacion,,,,
+122,7,undirected,4,Subyugacion,,,,
+122,9,undirected,3,Conflictiva,,,,
+122,119,undirected,2,Distante,,,,
+122,24,undirected,10,Conflictiva_distante,,,,
+122,57,undirected,11,Cercana_Conflictiva,,,,
+122,6,undirected,6,Colaboracion ,,,,
+123,136,undirected,2,Distante,,,,
+123,137,undirected,4,Subyugacion,,,,
+123,138,undirected,6,Colaboracion ,,,,
+123,6,undirected,6,Subyugacion,,,,
+83,44,undirected,2,Distante,,,,
+83,63,undirected,2,Distante,,,,
+83,150,undirected,2,Distante,,,,
+83,38,undirected,5,Cercana,,,,
+83,39,undirected,2,Distante,,,,
+72,9,undirected,7,Cuidado,,,,
+73,9,undirected,7,Cuidado,,,,
+122,9,undirected,7,Cuidado,,,,

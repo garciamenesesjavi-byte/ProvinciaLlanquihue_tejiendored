@@ -232,30 +232,30 @@ const nodos = {{nodes | safe}};
 
 const colores = {
 
-    "Programa":"#ff69b4",
-    "programa":"#ff69b4",
+    "Programa":"#df89ff",
+    "programa":"#df89ff",
 
-    "Salud":"#4CAF50",
+    "Salud":"#85be39",
 
-    "Judicial":"#6ec6ff",
-    "judicial":"#6ec6ff",
+    "Judicial":"#58c1f9",
+    "judicial":"#58c1f9",
 
-    "Educacion":"#ffd54f",
+    "Educacion":"#fefb86",
 
-    "Comunitario":"#ff9800",
+    "Comunitario":"#ef8e36",
 
-    "Seguridad":"#ff8a80",
+    "Seguridad":"#ec6285",
 
-    "Gobierno local":"#7fffd4",
+    "Gobierno local":"#55ba96",
 
-    "Infancia":"#c7a17a",
+    "Infancia":"#ceb4b1",
 
-    "Publico":"#c2185b",
-    "Público":"#c2185b",
+    "Publico":"#9922bf",
+    "Público":"#9922bf",
 
-    "Privada":"#556b2f",
+    "Privada":"#d82e48",
 
-    "Espacio":"#7e8c54",
+    "Espacio":"#858327",
 
     "Servicio":"#000000"
 
