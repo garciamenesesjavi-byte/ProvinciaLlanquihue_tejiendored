@@ -411,7 +411,7 @@ legend.onAdd = function () {
 
     <div><span style="background:#c2185b"></span> Público</div>
 
-    <div><span style="background:#556b2f"></span> Privada</div>
+    <div><span style="background:#B22222"></span> Privada</div>
 
     <div><span style="background:#556b2f"></span> Espacio</div>
 
