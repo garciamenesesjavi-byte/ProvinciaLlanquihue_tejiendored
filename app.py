@@ -62,7 +62,7 @@ HTML = """
 
 <meta charset="utf-8">
 
-<title>Mapa Región de Los Lagos</title>
+<title>Mapa Ficticio Tejiendo Red</title>
 
 
 <link rel="stylesheet"
@@ -533,7 +533,7 @@ def buscar():
         params={
 
 
-            "q":q+", Región de Los Lagos, Chile",
+            "q":q+", Mapa Ficticio, Chile",
 
 
             "format":"json",
